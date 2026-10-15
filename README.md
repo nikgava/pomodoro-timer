@@ -4,6 +4,14 @@ A minimal Pomodoro timer for the macOS menu bar. Built with Swift, SwiftUI and A
 
 <img src="docs/Pomodoro-chiaro.png" alt="Pomodoro menu bar panel" width="360">
 
+## Download
+
+**[Download Pomodoro for Mac](https://github.com/nikgava/pomodoro-timer/raw/refs/heads/main/downloads/Pomodoro-macOS-arm64.zip)** — v1.0.1 · Apple Silicon · macOS 14+
+
+Unzip, move **Pomodoro.app** to **Applications** and open it. Click the timer icon in the menu bar. No developer tools required.
+
+The app is signed locally, not notarized by Apple. If macOS blocks the first launch, follow [Apple’s instructions](https://support.apple.com/en-us/102445) to approve it in **System Settings → Privacy & Security → Open Anyway**.
+
 ## Features
 
 - Adjustable Focus and Relax timers: 25 and 5 minutes by default, from 1 to 180 minutes each.
@@ -12,7 +20,7 @@ A minimal Pomodoro timer for the macOS menu bar. Built with Swift, SwiftUI and A
 - Light and dark appearance, saved preferences and optional launch at login.
 - Runs in the menu bar, with no Dock icon. Countdown updates stop when the panel is closed.
 
-## Build and install
+## Build from source
 
 Requires an **Apple Silicon Mac**, **macOS 14+** and **Swift 6+** (Xcode 16+ or compatible Apple Command Line Tools).
 
@@ -22,9 +30,7 @@ Download or clone this repository, then run from its folder:
 ./scripts/build.sh
 ```
 
-Move `dist/Pomodoro.app` to **Applications** and open it. Click the timer icon in the menu bar. Enable **Open at Login** from the **•••** menu if needed.
-
-The script also creates `dist/Pomodoro-macOS-arm64.zip` for sharing. Builds are signed locally, not notarized by Apple; macOS may require approval on another Mac. Intel Macs are not supported by the build script.
+Builds `dist/Pomodoro.app` and `dist/Pomodoro-macOS-arm64.zip`. Intel Macs are not supported by the build script.
 
 ## Usage
 
@@ -33,6 +39,8 @@ Choose Focus or Relax, adjust the duration and press **Start**. Closing the pane
 **Space**: start/pause/resume · **⌘R**: reset · **Esc**: close panel · **⌘Q**: quit.
 
 Timers account for time spent asleep. Quitting ends the current session; preferences are saved locally.
+
+Enable **Open at Login** from the **•••** menu if needed.
 
 ## Development
 
