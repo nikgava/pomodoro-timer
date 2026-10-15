@@ -1,0 +1,9 @@
+.DS_Store
+.build/
+.swiftpm/
+dist/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+docs/release-build.log
+docs/preview-results.txt

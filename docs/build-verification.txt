@@ -1,0 +1,77 @@
+Pomodoro 1.0.1 (build 2) — build and package verification
+Date: 15 October 2026
+
+Actual environment
+  macOS 27.0.1 (26A434), Apple Silicon arm64
+  Apple Swift 6.4, Swift 6 language mode
+  Apple Command Line Tools; no external dependencies
+
+New release build
+  ./scripts/build.sh: PASSED, Release configuration
+  App: dist/Pomodoro.app
+  Archive: dist/Pomodoro-macOS-arm64.zip
+  Mach-O arm64 executable: 515072 bytes
+  App on disk: 656 KiB
+  ZIP archive: 215069 bytes
+  Declared minimum system: macOS 14.0
+  Info.plist: valid; English development region; version 1.0.1, build 2
+  LSUIElement=true; bundle identifier it.nicologavagni.Pomodoro
+  Original AppKit-drawn icon included in bundle
+  Local ad hoc signature with hardened runtime: valid
+  codesign --verify --strict: PASSED
+  ZIP integrity of all entries: PASSED
+  Linked dependencies: only macOS system frameworks and Swift libraries
+
+New source validation
+  All app and engine source files typechecked together as one module:
+    xcrun swiftc -typecheck -swift-version 6 -parse-as-library
+      -target arm64-apple-macosx14.0
+      Sources/PomodoroCore/*.swift Sources/Pomodoro/*.swift
+  Result: PASSED, no errors or warnings
+  System services harness rerun for English interface text: 27/27 PASSED
+  Checks cover audio mute/volume/output rules and login-item preferences.
+  This harness does not change login registration or system audio settings.
+
+New native panel previews
+  ./scripts/preview.sh: PASSED on macOS 27.0.1
+  Light, dark and phase-completion panel captures regenerated at 784 x 922.
+  The light panel was visually reviewed: English interface, compact Start
+  button without a phase name, and rounded timer digits.
+  The preview helper captures only its own native panel using
+  SCShareableContent.currentProcess and an exact window identifier; it remains
+  outside the shipped product.
+
+Previous release regression baseline
+  The unchanged timer engine and model were previously verified with
+  64 automated checks and 26 app integration checks, all passing.
+  These 90 checks are the previous release baseline, not a new full run
+  of the 1.0.1 release. The 27 service checks above were rerun for 1.0.1.
+  Baseline coverage includes start, pause, resume, manual/automatic phase
+  transitions, hidden-panel timing, expiry opening the panel, a real
+  60-second expiry, simulated sleep/wake recovery and duplicate suppression.
+  Baseline integration audio requested native playback and checked mute
+  handling; no human listening confirmation. Sleep was simulated, not a
+  physical sleep/wake cycle.
+
+Safe update packaging
+  The app was built, signed, verified and archived in a fresh staging folder.
+  The previous bundle was moved to dist/.previous/Pomodoro.app before the
+  new bundle was installed at dist/Pomodoro.app. A subsequent refinement build
+  preserved the intermediate bundle in a unique dist/.previous subdirectory.
+  Existing process PID 41947 retained its original start time and executable
+  inode 118831771; the build did not quit or signal the running app.
+  The running instance continues using the previous version until the user
+  chooses to quit and reopen the updated app.
+
+Notes
+  ScreenCaptureKit on this SDK can omit the native prominent button label
+  in dark/completion screenshots. A native NSView snapshot of the same dark
+  panel includes the play glyph and Start title. Fresh processes, unique
+  filenames and an alternate label layout reproduced the capture artifact;
+  no production workaround or UI change was introduced for the screenshot.
+  The CLT linker reports absent Developer/usr/lib and
+  Developer/Library/Frameworks search directories. Linking succeeds;
+  the executable has no dependency on files in those directories.
+  The local signature is not a notarized Developer ID signature.
+  xcodebuild is unavailable in the installed Command Line Tools;
+  the delivered app was built using Swift Package Manager.

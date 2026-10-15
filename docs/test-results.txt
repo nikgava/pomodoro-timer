@@ -1,0 +1,67 @@
+PASS: defaults and start
+PASS: fractional pause and resume
+PASS: manual next phase
+PASS: automatic exact boundaries
+PASS: wake and original schedule
+PASS: ten million missed cycles
+PASS: reset and selection
+PASS: editing active duration
+PASS: duration clamping
+PASS: automatic preference changes
+PASS: pause at expiry
+PASS: elapsed time without UI ticks
+12 tests, 0 failures
+PASS Audio disabled never reads hardware or plays
+PASS Audio enabled plays exactly once
+PASS Next completion stops previous sound before playback
+PASS Explicit sound stop reaches the player
+PASS Muted or zero-volume output suppresses playback
+PASS Audio failure is reported without a fallback beep
+PASS Main hardware mute is respected
+PASS Main system volume zero is respected
+PASS All silent output channels suppress playback
+PASS One audible output channel permits playback
+PASS Unavailable controls defer to device hardware
+PASS Absent output device suppresses playback
+PASS Native completion sound is available and short
+PASS Native sound follows default system output and gain
+PASS Login refresh never registers on launch
+PASS Explicit login enable registers main app
+PASS Repeated login enable does not register twice
+PASS Explicit login disable unregisters main app
+PASS Repeated login disable does not unregister twice
+PASS Login reflects changes made in System Settings
+PASS Pending login approval is explained
+PASS Pending login approval does not register again
+PASS Pending login registration can be cancelled
+PASS Login registration failure preserves disabled state
+PASS Successful login retry clears previous error
+PASS Failed login disable preserves enabled state
+PASS Missing login service reports disabled
+System service checks: 27/27 passed
+PASS: model defaults
+PASS: idle schedules no work
+PASS: running hidden: only deadline scheduled
+PASS: opening panel reads actual remaining time
+PASS: pause cancels all work
+PASS: paused time remains frozen
+PASS: resume retains fractional seconds
+PASS: editing active duration keeps deadline
+PASS: durations and preferences persisted locally
+PASS: session not restored as stale active timer
+PASS: manual expiry delivered once
+PASS: no duplicate after repeated reconciliation/wake
+PASS: manual starts next phase
+PASS: reset cancels and clears completion
+PASS: sleep cancels all scheduled work
+PASS: wake catches up cycles once
+PASS: cycle recovery no repeated event
+PASS: phase selection at rest
+PASS: phase selection blocked while running
+PASS: phase selection blocked while paused
+PASS: shutdown cancels work and callbacks
+PASS: invalid local values fall back to defaults
+PASS: duration bounds persisted after clamping
+PASS: late pause click preserves manual completion
+PASS: subsequent explicit action starts next phase
+25 model checks, 0 failures

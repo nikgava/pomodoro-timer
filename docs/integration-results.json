@@ -1,0 +1,117 @@
+{
+  "app" : "Pomodoro",
+  "architecture" : "arm64",
+  "audioNote" : "Verificata richiesta di riproduzione nativa e decisione mute. L’ascolto umano non è automatizzabile.",
+  "checks" : [
+    {
+      "name" : "Avvio: icona nella barra dei menu",
+      "passed" : true
+    },
+    {
+      "name" : "Nessuna icona nel Dock",
+      "passed" : true
+    },
+    {
+      "name" : "Durate iniziali 25\/5",
+      "passed" : true
+    },
+    {
+      "name" : "Inattivo senza timer programmati",
+      "passed" : true
+    },
+    {
+      "name" : "Pannello ancorato aperto",
+      "passed" : true
+    },
+    {
+      "name" : "Avvio Focus",
+      "passed" : true
+    },
+    {
+      "name" : "Aggiornamenti UI solo a pannello visibile",
+      "passed" : true
+    },
+    {
+      "name" : "Chiusura pannello: conteggio continua, aggiornamenti UI sospesi",
+      "passed" : true
+    },
+    {
+      "name" : "Pausa senza timer programmati",
+      "passed" : true
+    },
+    {
+      "name" : "Pausa conserva il tempo",
+      "passed" : true
+    },
+    {
+      "name" : "Ripresa mantiene il residuo",
+      "passed" : true
+    },
+    {
+      "name" : "Scadenza manuale apre il pannello",
+      "passed" : true
+    },
+    {
+      "name" : "Scadenza indica Focus terminato",
+      "passed" : true
+    },
+    {
+      "name" : "Nessun avviso ripetuto",
+      "passed" : true
+    },
+    {
+      "name" : "Nessuna riapertura dopo avviso già chiuso",
+      "passed" : true
+    },
+    {
+      "name" : "Pulsante avvia la fase successiva",
+      "passed" : true
+    },
+    {
+      "name" : "Reimposta la fase corrente",
+      "passed" : true
+    },
+    {
+      "name" : "Alternanza automatica ciclica",
+      "passed" : true
+    },
+    {
+      "name" : "Più scadenze aggregate in un avviso",
+      "passed" : true
+    },
+    {
+      "name" : "Durante sospensione nessun timer programmato",
+      "passed" : true
+    },
+    {
+      "name" : "Risveglio: recupero 60 periodi e un solo avviso",
+      "passed" : true
+    },
+    {
+      "name" : "Risveglio ripetuto senza duplicati",
+      "passed" : true
+    },
+    {
+      "name" : "Scadenza reale a pannello chiuso (60 s)",
+      "passed" : true
+    },
+    {
+      "name" : "Apertura automatica reale alla scadenza",
+      "passed" : true
+    },
+    {
+      "name" : "Suono disattivato",
+      "passed" : true
+    },
+    {
+      "name" : "Audio nativo rispetta uscita silenziosa",
+      "passed" : true
+    }
+  ],
+  "date" : "2026-10-15T14:13:50Z",
+  "failed" : 0,
+  "macOS" : "Versione 27.0.1 (Build 26A434)",
+  "nativeAudioOutcome" : "played",
+  "passed" : 26,
+  "sleepNote" : "Sospensione simulata sul clock iniettato; nessuna sospensione fisica del Mac."
+}
